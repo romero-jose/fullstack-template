@@ -8,10 +8,15 @@ const port = process.env.PORT || 3000
 const app = express()
 
 app.use(cors())
+app.use(express.json())
 app.use(morgan('dev'))
 
 app.get('/api/health', async (_req, res) => {
   res.send({ status: 'ok' })
+})
+
+app.post('/api/echo', async (req, res) => {
+  res.status(200).json(req.body)
 })
 
 app.listen(port, () => {
