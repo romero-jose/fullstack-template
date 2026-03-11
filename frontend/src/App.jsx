@@ -1,11 +1,9 @@
-import { fontFamily } from './styles'
-
 import ServerStatus from './components/ServerStatus'
 import Counter from './components/Counter'
 
 const App = () => {
   return (
-    <div style={{ fontFamily }}>
+    <div className="page-container">
       <h1>Vite + React</h1>
       <div>
         <h3>Counter</h3>
