@@ -1,19 +1,17 @@
-import { useState } from 'react'
 import { fontFamily } from './styles'
 
-const App = () => {
-  const [count, setCount] = useState(0)
+import ServerStatus from './components/ServerStatus'
+import Counter from './components/Counter'
 
+const App = () => {
   return (
     <div style={{ fontFamily }}>
       <h1>Vite + React</h1>
       <div>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <h3>Counter</h3>
+        <Counter />
+        <h3>Status</h3>
+        <ServerStatus />
       </div>
     </div>
   )
