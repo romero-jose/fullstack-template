@@ -3,6 +3,8 @@ import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
 
+import { errorHandler } from './middleware/errorHandler.js'
+
 const port = process.env.PORT || 3000
 
 const app = express()
@@ -19,6 +21,7 @@ app.post('/api/echo', async (req, res) => {
   res.status(200).json(req.body)
 })
 
+app.use(errorHandler)
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })
